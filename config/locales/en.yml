@@ -31,8 +31,45 @@
 
 en:
   base_title: "Foods And Drinks"
-  sign_out: "Sign out"
-  sign_up: "Sign up"
+  layouts:
+    header:
+      free_and_fast: "Free and Fast Delivery"
+      free_ship: "Free shipping On all orders"
+      mail_to: "hoatrankim994@gmail.com"
+      all_cate: "All categories"
+      login: "Login"
+      logout: "Logout"
+    banner:
+      toggle: "Toggle navigation"
+      home: "Home"
+      foods: "Foods"
+      drinks: "Drinks"
+      contact: "Contact"
+      empty_cart: "Empty Cart"
+      signup: "SignUp"
+      items: " items"
+    footer:
+      sign_up: "Sign up for free"
+      sign_in: "Sign in with your account"
+      copy_right: "&copy 2016 Smart Shop. All rights reserved | Design by "
+      w3layouts: "W3layouts"
+      email: "Email :"
+      password: "Password :"
+      re_password: "Re-type Password :"
+      remember_me: "Remember Me."
+      forgot_password: "Forgot password?"
+      register: "REGISTER NOW"
+      signin: "SIGNIN"
+  products:
+    not_found_product: "Not Found Product.."
+    show:
+      quantity: "Quantity: "
+      types: "Types: "
+      add_cart: "Add to cart"
+      description: "Description"
   static_pages:
     home:
       hello: "Hello"
+    product:
+      add_cart: "Add to cart"
+      quickview: "Quick view"

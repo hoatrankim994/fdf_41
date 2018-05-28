@@ -1,0 +1,54 @@
+<div class="ban-top">
+  <div class="container">
+    <div class="top_nav_left">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only"><%= t ".toggle" %></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav menu__list">
+              <li class="active menu__item menu__item--current">
+                <%= link_to root_url, class: "menu__link" do %>
+                  <%= t ".home" %>
+                  <span class="sr-only">(current)</span>
+                <% end %>
+              </li>
+              <li class=" menu__item">
+                <%= link_to t(".foods"), root_url, class: "menu__link"%>
+              </li>
+              <li class="menu__item">
+                <%= link_to t(".drinks"), root_url, class: "menu__link"%>
+              </li>
+              <li class="menu__item">
+                <%= link_to t(".contact"), root_url, class: "menu__link"%>
+              </li>
+              <li class="menu__item">
+                <%= link_to t(".signup"), new_user_registration_path, class: "menu__link"%>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="top_nav_right">
+      <div class="cart box_1">
+        <a href="checkout.html">
+          <h3>
+            <div class="total">
+              <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+              <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span><%= t ".items" %>)
+            </div>
+          </h3>
+        </a>
+        <p><a href="javascript:;" class="simpleCart_empty"><%= t ".empty_cart" %></a></p>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

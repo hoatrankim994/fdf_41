@@ -1,1 +1,7 @@
-<h1><%= t ".hello" %></h1>
+<div class="product-easy">
+  <div class="container">
+    <%= render partial: "product", collection: @products  %>
+    <div class="clearfix"></div>
+    <%= paginate @products %>
+  </div>
+</div>

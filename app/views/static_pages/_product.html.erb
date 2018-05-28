@@ -1,0 +1,19 @@
+<div class="col-md-3 product-men">
+  <div class="men-pro-item simpleCart_shelfItem">
+    <div class="men-thumb-item">
+      <%= image_tag product.picture.url, class: "thumbnail" %>
+      <div class="men-cart-pro">
+        <div class="inner-men-cart-pro">
+          <%= link_to t(".quickview"), product_path(product), class: "link-product-add-cart" %>
+        </div>
+      </div>
+    </div>
+    <div class="item-info-product ">
+      <h4><a href="single.html"><%= product.name %></a></h4>
+      <div class="info-product-price">
+        <span class="item_price"><%= product.price %></span>
+      </div>
+      <%= link_to t(".add_cart"), "#", class: "item_add single-item hvr-outline-out button2" %>
+    </div>
+  </div>
+</div>
