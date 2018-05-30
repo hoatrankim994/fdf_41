@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root "static_pages#home"
+  resources :orders, only: %i(index destroy create) do
+    resources :order_details, only: :index
+  end
+  resource :cart, except: %i(index new edit)
   resources :products, only: [:show, :index]
 end
