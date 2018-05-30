@@ -1,0 +1,13 @@
+<table class="timetable_sub">
+  <thead>
+    <tr>
+      <th><%= t ".remove" %></th>
+      <th><%= t ".product" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".price" %></th>
+      <th><%= t ".quantity" %></th>
+      <th><%= t ".total" %></th>
+    </tr>
+  </thead>
+  <%= render partial: "order_cart", collection: @order_details, as: :order_detail %>
+</table>

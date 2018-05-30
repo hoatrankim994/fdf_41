@@ -73,3 +73,18 @@ en:
     product:
       add_cart: "Add to cart"
       quickview: "Quick view"
+  carts:
+    confirm: "Are you sure?"
+    title: "Cart"
+    create:
+      success_add_cart: "Success add to cart."
+      fail_add_cart: "Fail add to cart."
+    shopping_cart:
+      remove: "Remove"
+      product: "Product"
+      name: "Name"
+      price: "Price"
+      quantity: "Quantity"
+      total_label: "Total"
+    show:
+      my_shopping: "My Shopping Bag"
