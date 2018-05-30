@@ -8,13 +8,14 @@
     <div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated">
       <%= form_tag cart_path(product_id: @product.id), method: :post do %>
         <h3><%= @product.name %></h3>
-        <p><span class="item_price"><%= @product.price %></span></p>
+        <p><span class="item_price"><%= t("product_price", price: @product.price ) %></span></p>
         <div class="color-quality">
           <div class="color-quality-right">
             <h5><%= t ".quantity" %></h5>
             <%= number_field_tag :quantity, nil,
               value: Settings.products.min_quantity, min: Settings.products.min_quantity,
               max: @product.quantity, required: true %>
+            <%= hidden_field_tag "price", @product.price, class: "product_id" %>
           </div>
         </div>
         <div class="occasional">

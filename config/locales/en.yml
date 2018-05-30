@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  product_price: "$ %{price}"
   base_title: "Foods And Drinks"
   layouts:
     header:
@@ -76,15 +77,20 @@ en:
   carts:
     confirm: "Are you sure?"
     title: "Cart"
+    apply: "Apply"
     create:
       success_add_cart: "Success add to cart."
       fail_add_cart: "Fail add to cart."
+      invalid_quantity: "Invalid quantity"
+    update:
+      invalid_quantity: "Invalid quantity"
     shopping_cart:
       remove: "Remove"
       product: "Product"
       name: "Name"
       price: "Price"
       quantity: "Quantity"
-      total_label: "Total"
+      total: "Total"
+      amount: "Amount"
     show:
       my_shopping: "My Shopping Bag"

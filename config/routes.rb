@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  put "/carts/update/", to: "carts#update"
   devise_scope :user do
     get "/login", to: "devise/sessions#new"
     delete "/logout", to: "devise/sessions#destroy"

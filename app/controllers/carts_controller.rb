@@ -1,13 +1,9 @@
 class CartsController < ApplicationController
-  before_action :load_product, only: :create
+  before_action :load_product, only: %i(create update)
   before_action :current_order, only: :show
+  before_action :load_cart, only: %i(show update)
 
-  def show
-    @order_details = []
-    session[:cart].each do |item|
-      @order_details << OrderDetail.new item
-    end
-  end
+  def show; end
 
   def create
     order_detail = OrderDetail.new cart_params
@@ -16,10 +12,25 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
+  def update
+    quantity = params[:quantity].to_i
+    respond_to do |format|
+      format.html{redirect_to cart_path}
+      format.js
+      if quantity > @product.quantity || quantity <= 0
+        format.json{render json: {quantity_product: @product.quantity, message: t(".invalid_quantity")}}
+      else
+        result = find_product_in_cart(@product.id)
+        result["quantity"] = quantity
+        format.json{render json: {result: result, product: @product, order_details: @order_details}.to_json}
+      end
+    end
+  end
+
   private
 
   def cart_params
-    params.permit :product_id, :quantity
+    params.permit :product_id, :quantity, :price
   end
 
   def load_product
@@ -52,6 +63,13 @@ class CartsController < ApplicationController
     else
       session[:cart] << order_detail
       flash[:success] = t ".success_add_cart"
+    end
+  end
+
+  def load_cart
+    @order_details = []
+    session[:cart].each do |item|
+      @order_details << OrderDetail.new(item)
     end
   end
 end

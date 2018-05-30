@@ -3,7 +3,7 @@
     <%= link_to cart_path(product_id: order_detail.product_id), method: :delete,
     data: {confirm: t("carts.confirm")} do %>
       <div class="rem">
-        <div class="close1"> </div>
+        <div class="close1"></div>
       </div>
     <% end %>
   </td>
@@ -18,14 +18,16 @@
     <% end %>
   </td>
   <td class="invert"><%= order_detail.product_price %></td>
+  <%= form_tag cart_path(product_id: order_detail.product_id), method: :patch, remote: true do %>
   <td class="invert">
     <div class="quantity">
-      <div class="quantity-select">
-        <div class="entry value-minus">&nbsp;</div>
-        <div class="entry value"><span><%= order_detail.quantity %></span></div>
-        <div class="entry value-plus active">&nbsp;</div>
-      </div>
+      <%= number_field_tag :quantity, nil, class: "form-control input-sm quantity_#{order_detail.product_id}", min: Settings.products.min_quantity,
+          max: order_detail.product_quantity,
+            value: order_detail.quantity, onChange: "OnChangeQuantity(#{order_detail.product_id})" %>
+      <br />
+      <%= hidden_field_tag "product_id", order_detail.product_id, class: "product_id" %>
     </div>
   </td>
-  <td class="invert"><%= total order_detail.product_price, order_detail.quantity %></td>
+  <td class="invert total_<%= order_detail.product_id %>"><%= t("product_price", price: amount(order_detail.product_price, order_detail.quantity)) %></td>
+  <% end %>
 </tr>
