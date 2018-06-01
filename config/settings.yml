@@ -1,2 +1,4 @@
 home:
   per_home: 10
+products:
+  min_quantity: 1

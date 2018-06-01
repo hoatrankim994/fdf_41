@@ -1,0 +1,31 @@
+<tr>
+  <td class="invert-closeb">
+    <%= link_to cart_path(product_id: order_detail.product_id), method: :delete,
+    data: {confirm: t("carts.confirm")} do %>
+      <div class="rem">
+        <div class="close1"> </div>
+      </div>
+    <% end %>
+  </td>
+  <td class="invert-image">
+    <%= link_to order_detail.product do %>
+      <%= image_tag order_detail.product_picture.url %>
+    <% end %>
+  </td>
+  <td class="invert">
+    <%= link_to order_detail.product do %>
+      <%= order_detail.product_name %>
+    <% end %>
+  </td>
+  <td class="invert"><%= order_detail.product_price %></td>
+  <td class="invert">
+    <div class="quantity">
+      <div class="quantity-select">
+        <div class="entry value-minus">&nbsp;</div>
+        <div class="entry value"><span><%= order_detail.quantity %></span></div>
+        <div class="entry value-plus active">&nbsp;</div>
+      </div>
+    </div>
+  </td>
+  <td class="invert"><%= total order_detail.product_price, order_detail.quantity %></td>
+</tr>
